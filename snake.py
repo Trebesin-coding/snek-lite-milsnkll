@@ -11,9 +11,8 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 player = pygame.image.load("for-lovely-souhrada/gg/766161.png").convert_alpha()
 playerX = 200
 playerY = 200
-playerZone = player.get_rect(center = (playerX, playerY)) #?
+playerZone = player.get_rect(center=(playerX, playerY))  # ?
 speed = 10
-
 
 
 player = pygame.image.load("for-lovely-souhrada/gg/766161.png").convert_alpha()
@@ -49,13 +48,12 @@ while running:
     if keys[pygame.K_p]:
         exit()
 
-
     if player_rect.colliderect(coin):
         skore += 1
         coin.x = random.randint(50, 750)
         coin.y = random.randint(50, 550)
 
-    screen.blit(player, player_rect)  
+    screen.blit(player, player_rect)
     pygame.draw.rect(screen, "red", coin)
 
     text = font.render(f"Score: {skore}", True, "black")
